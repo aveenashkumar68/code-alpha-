@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(22, 58, 61);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(43, 117, 111);
+            padding: 0 20px;
+            height: 60px;
+        }
+
+        .left h1 {
+            font-size: 25px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: rgb(23, 65, 81);
+        }
+
+        .firstSection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 50px 0;
+            padding: 20px;
+        }
+
+        .firstSection>div {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+
+        .leftSection {
+            font-size: 30px;
+            margin: 20px 0;
+        }
+
+        .details {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .rightSection img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .aqua {
+            color: rgb(47, 179, 135);
+        }
+
+        #element {
+            color: rgb(47, 179, 135);
+        }
+
+        .size {
+            margin: 20px 0;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .section-content {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(43, 117, 111);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .firstSection>div {
+                width: 100%;
+            }
+
+            .leftSection {
+                font-size: 25px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <h1>My Portfolio</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="firstSection">
+            <div class="leftSection">
+                Hi, I am <span class="aqua">Aveenash Kumar</span>
+                <div>& I am a passionate</div>
+                <span id="element"></span>
+                <div class="details">
+                    <p>Seeking a challenging IT internship where I can leverage my strong educational background and training to add value to the organization.</p>
+                    <p>Proficient in a range of computing systems, programming languages, and associated tools.</p>
+                    <p>As a motivated computer science student, I am eager to apply my technical skills and passion for front-end development to real-world challenges.</p>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="img.png" alt="Profile Image">
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="about">
+            <h1 class="size">About Me</h1>
+            <div class="section-content">
+                <p>I am currently pursuing my degree at <b>Excel Engineering College</b>.</p>
+                <p>I completed my 12th grade from <b>A.B.S College Lalganj</b> with a percentage of 71%.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="services">
+            <h1 class="size">Services</h1>
+            <div class="section-content">
+                <p>I am a front-end developer who can design and develop user interfaces for any website. I specialize in creating visually appealing and user-friendly web designs.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="projects">
+            <h1 class="size">Projects</h1>
+            <div class="section-content">
+                <ul>
+                    <li>Portfolio Website</li>
+                    <li>Image Gallery using HTML, CSS, and JavaScript</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="contact">
+            <h1 class="size">Contact Me</h1>
+            <div class="section-content">
+                <p><b>Phone:</b> +91 9386911260</p>
+                <p><b>Email:</b> aveenashkumar68@example.com</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>All rights are reserved © 2024</p>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Front-end developer'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
