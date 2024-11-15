@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    /* Reset styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Basic styling for body */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #85FFBD;
+      background-color: #D9AFD9;
+      background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+
+
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 2em;
+      color: #444;
+    }
+
+    /* Styling for the gallery container */
+    .gallery-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 1000px;
+      padding: 20px;
+    }
+
+    /* Styling for the gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%;
+    }
+
+    /* Styling individual images */
+    .gallery-item {
+      width: 100%;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      object-fit: cover;
+      height: 250px;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Lightbox styling */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    /* Close button styling */
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Image Gallery</h1>
+  <div class="gallery-container">
+    <div class="gallery">
+      <!-- Images in the gallery -->
+      <img src="1.jpg" alt="Image 1" class="gallery-item">
+      <img src="2.jpg" alt="Image 2" class="gallery-item">
+      <img src="3.jpg" alt="Image 3" class="gallery-item">
+      <img src="4.jpg" alt="Image 4" class="gallery-item">
+      <img src="5.jpg" alt="Image 5" class="gallery-item">
+      <img src="6.jpg" alt="Image 6" class="gallery-item">
+      <img src="7.jpg" alt="Image 7" class="gallery-item">
+      <img src="8.jpg" alt="Image 8" class="gallery-item">
+      <img src="9.jpg" alt="Image 9" class="gallery-item">
+    </div>
+  </div>
+
+  <!-- Lightbox for displaying clicked images -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="">
+  </div>
+
+  <script>
+    // JavaScript to handle lightbox functionality
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close");
+
+    // Function to open lightbox with clicked image
+    galleryItems.forEach(item => {
+      item.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = item.src;
+      });
+    });
+
+    // Function to close lightbox when clicking on the close button
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    // Function to close lightbox when clicking outside the image
+    lightbox.addEventListener("click", (e) => {
+      if (e.target !== lightboxImg) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+</body>
+
+</html>
