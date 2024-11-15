@@ -23,6 +23,3 @@ I'll create a personal web page to show off your work. We will test your HTML kn
 ✔️ Contact Info
 # Tools Used 🛠️
 -  GitHub Pages -To host my static website (HTML, CSS).
-## 🔗 Links
-[![GitHub](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Adityakumarchaurasiya)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aditya-chaurasiya/)
